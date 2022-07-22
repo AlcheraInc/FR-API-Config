@@ -1,0 +1,4 @@
+facesdk:
+  library-path: C:/Work/sources/spring cloud/facesdk-interactor/libs/alchera
+  model-path: C:/Work/sources/spring cloud/facesdk-interactor/bin/models
+  instance-number: 2
