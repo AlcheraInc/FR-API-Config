@@ -10,14 +10,24 @@ spring:
           uri: lb://AUTH-SERVICE
           predicates:
             - Path=/auth-service/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: auth-CB
         - id: facesdk-service
           uri: lb://FACESDK-SERVICE
           predicates:
             - Path=/facesdk-service/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: facesdk-CB
         - id: inference-service
           predicates:
             - Path=/inference-service/**
           uri: lb://INFERENCE-SERVICE
           filters:
             - RewritePath=/inference-service/(?<path>.*),/$\{path}
-           
+            - name: CircuitBreaker
+              args:
+                name: inference-CB
