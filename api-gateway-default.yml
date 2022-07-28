@@ -22,6 +22,7 @@ spring:
             - name: CircuitBreaker
               args:
                 name: facesdk-CB
+                fallbackUri: forward:/fallback
         - id: inference-service
           predicates:
             - Path=/inference-service/**
