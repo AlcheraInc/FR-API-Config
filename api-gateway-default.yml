@@ -1,17 +1,18 @@
 # gateway
-cloud:
-  gateway:
-    routes:
-      - id: auth-service
-        uri: lb://AUTH-SERVICE
-        predicates:
-          - Path=/auth-service/**
-      - id: facesdk-service
-        uri: lb://FACESDK-SERVICE
-        predicates:
-          - Path=/facesdk-service/**
-      - id: inference-service
-        predicates:
-          - Path=/inference-service/**
-        uri: lb://INFERENCE-SERVICE
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: auth-service
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/auth-service/**
+        - id: facesdk-service
+          uri: lb://FACESDK-SERVICE
+          predicates:
+            - Path=/facesdk-service/**
+        - id: inference-service
+          predicates:
+            - Path=/inference-service/**
+          uri: lb://INFERENCE-SERVICE
 
