@@ -14,5 +14,7 @@ spring:
         - id: inference-service
           predicates:
             - Path=/inference-service/**
-          uri: lb://INFERENCE-SERVICE
+          uri: lb://GO-SERVICE
+          filters:
+            - RewritePath=/inference-service/(?<segment>.*), /$\{segment}
 
