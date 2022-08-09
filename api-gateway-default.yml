@@ -3,10 +3,10 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: auth-service
-          uri: lb://AUTH-SERVICE
+        - id: site-mgt-service
+          uri: lb://SITEMGT-SERVICE
           predicates:
-            - Path=/auth-service/**
+            - Path=/site-gmt-service/**
         - id: facesdk-service
           uri: lb://FACESDK-SERVICE
           predicates:
