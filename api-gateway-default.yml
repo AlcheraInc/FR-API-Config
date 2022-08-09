@@ -6,7 +6,7 @@ spring:
         - id: site-mgt-service
           uri: lb://SITEMGT-SERVICE
           predicates:
-            - Path=/site-gmt-service/**
+            - Path=/sitemgt-service/**
         - id: facesdk-service
           uri: lb://FACESDK-SERVICE
           predicates:
