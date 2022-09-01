@@ -7,14 +7,12 @@ spring:
           uri: lb://SITEMGT-SERVICE
           predicates:
             - Path=/sitemgt-service/**
-        - id: facesdk-service
-          uri: lb://FACESDK-SERVICE
-          predicates:
-            - Path=/facesdk-service/**
+          filters:
+            - RewritePath=/sitemgt-service/(?<segment>.*), /$\{segment}
         - id: inference-service
           predicates:
-            - Path=/inference-service/**
-          uri: lb://GO-SERVICE
+            - Path=/fr-api-service/**
+          uri: lb://FR-API-SERVICE
           filters:
-            - RewritePath=/inference-service/(?<segment>.*), /$\{segment}
+            - RewritePath=/fr-api-service/(?<segment>.*), /$\{segment}
 
