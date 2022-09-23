@@ -15,4 +15,28 @@ spring:
           uri: lb://FR-API-SERVICE
           filters:
             - RewritePath=/fr-api-service/(?<segment>.*), /$\{segment}
+        - id: device-service
+            predicates:
+              - Path=/device-service/**
+            uri: lb://DEVICE-SERVICE
+            filters:
+              - RewritePath=/device-service/(?<segment>.*), /$\{segment}
+        - id: audit-service
+            predicates:
+              - Path=/audit-service/**
+            uri: lb://AUDIT-SERVICE
+            filters:
+              - RewritePath=/audit-service/(?<segment>.*), /$\{segment}
+        - id: comm-service
+            predicates:
+              - Path=/comm-service/**
+            uri: lb://COMM-SERVICE
+            filters:
+              - RewritePath=/comm-service/(?<segment>.*), /$\{segment}
+        - id: payment-service
+            predicates:
+              - Path=/payment-service/**
+            uri: lb://PAYMENT-SERVICE
+            filters:
+              - RewritePath=/payment-service/(?<segment>.*), /$\{segment}
 
