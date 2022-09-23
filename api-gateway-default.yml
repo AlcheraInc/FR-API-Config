@@ -3,7 +3,7 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: site-mgt-service
+        - id: sitemgt-service
           uri: lb://SITEMGT-SERVICE
           predicates:
             - Path=/sitemgt-service/**
