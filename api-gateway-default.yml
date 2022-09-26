@@ -9,7 +9,7 @@ spring:
           args:
             retries: 3
             exceptions: io.netty.channel.ConnectTimeoutException
-            methods: POST,GET,PATCH,PUT,DELETE
+            methods: POST,GET,PATCH,PUT,DELETE,OPTIONS
             backoff:
               firstBackoff: 10ms
               maxBackoff: 50ms
