@@ -2,6 +2,19 @@
 spring:
   cloud:
     gateway:
+      httpclient:
+        connect-timeout: 200
+      default-filters:
+        - name: Retry
+          args:
+            retries: 3
+            exceptions: io.netty.channel.ConnectTimeoutException
+            methods: POST,GET
+            backoff:
+              firstBackoff: 10ms
+              maxBackoff: 50ms
+              factor: 2
+              basedOnPreviousValue: false
       routes:
         - id: sitemgt-service
           uri: lb://SITEMGT-SERVICE
