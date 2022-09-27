@@ -8,7 +8,7 @@ spring:
         - name: Retry
           args:
             retries: 3
-            exceptions: io.netty.channel.ConnectTimeoutException,java.net.ConnectException
+            exceptions: java.net.ConnectException,reactor.netty.http.client.PrematureCloseException
             methods: POST,GET,PATCH,PUT,DELETE,OPTIONS
             backoff:
               firstBackoff: 10ms
