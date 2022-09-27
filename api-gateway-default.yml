@@ -8,8 +8,17 @@ spring:
         - name: Retry
           args:
             retries: 3
-            exceptions: java.io.IOException
-            methods: POST,GET,PATCH,PUT,DELETE,OPTIONS
+            series:
+              - SERVER_ERROR
+            exceptions:
+              - java.io.IOException
+            methods:
+              - POST
+              - GET
+              - PATCH
+              - PUT
+              - DELETE
+              - OPTIONS
             backoff:
               firstBackoff: 10ms
               maxBackoff: 50ms
