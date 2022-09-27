@@ -8,10 +8,7 @@ spring:
         - name: Retry
           args:
             retries: 3
-            series:
-              - SERVER_ERROR
-            exceptions:
-              - java.io.IOException
+            statuses: INTERNAL_SERVER_ERROR
             methods:
               - POST
               - GET
