@@ -9,7 +9,7 @@ spring:
           args:
             retries: 3
             statuses: INTERNAL_SERVER_ERROR
-            methods: POST, GET, PATCH, PUT, DELETE, OPTIONS
+            methods: POST,GET,PATCH,PUT,DELETE,OPTIONS
             backoff:
               firstBackoff: 10ms
               maxBackoff: 50ms
