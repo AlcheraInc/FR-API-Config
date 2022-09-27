@@ -16,6 +16,7 @@ spring:
             methods: POST,GET,PATCH,PUT,DELETE,OPTIONS
             exceptions:
               - java.io.IOException
+              - io.netty.channel.ConnectTimeoutException
             backoff:
               firstBackoff: 10ms
               maxBackoff: 50ms
